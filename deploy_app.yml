@@ -1,0 +1,12 @@
+- name: Deploy Application
+  hosts: all
+  become: yes
+
+  tasks:
+- name: Copy App Files
+  copy:
+    src: /var/lib/jenkins/workspace/ansible_pipeline/app/  # Use Jenkins workspace
+    dest: /var/www/html/
+    owner: www-data
+    group: www-data
+    mode: '0755'
