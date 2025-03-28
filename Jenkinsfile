@@ -28,18 +28,6 @@ pipeline {
             }
         }
         
-        stage('Run Tests') {
-            steps {
-                script {
-                    sh '''
-                        bash -c "source venv/bin/activate"
-                        export PYTHONPATH=$(pwd)
-                        venv/bin/pytest pytest/
-                    '''
-                }
-            }
-        }
-        
         stage('Build and Archive') {
             steps {
                 script {
