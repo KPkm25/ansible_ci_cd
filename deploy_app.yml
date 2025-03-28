@@ -1,11 +1,12 @@
 - name: Deploy Application
   hosts: all
   become: yes
+  become_user: root  # Ensure Ansible has root privileges
 
   tasks:
     - name: Copy App Files
       copy:
-        src: /var/lib/jenkins/workspace/ansible_pipeline/app/  # Use Jenkins workspace
+        src: /var/lib/jenkins/workspace/ansible_pipeline/app/  # Jenkins workspace path
         dest: /var/www/html/
         owner: www-data
         group: www-data
