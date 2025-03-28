@@ -5,7 +5,7 @@
   tasks:
     - name: Copy App Files
       copy:
-        src: /home/worker2/ansible_ci_cd/app.py   # Update this path
+        src: /var/lib/jenkins/workspace/ansible_pipeline/app.py  # Jenkins workspace
         dest: /var/www/html/
         owner: www-data
         group: www-data
